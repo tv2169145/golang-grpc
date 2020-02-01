@@ -1,7 +1,6 @@
 package repos
 
 import (
-	"errors"
 	"fmt"
 	"github.com/go-xorm/xorm"
 	"github.com/tv2169145/golang-grpc/types"
@@ -57,14 +56,14 @@ func (u *usersRepo) FindByEmail(email string) (user *types.User, err error) {
 	}
 	user = new(types.User)
 	user.Email = email
-
+	
 	has, err := u.db.Get(user)
 	if err != nil {
-		return
+		return 
 	}
 	if !has {
 		err = fmt.Errorf("unable to find a user")
-		return
+		return 
 	}
 	return
 }
