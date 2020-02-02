@@ -2,21 +2,21 @@ package repos_test
 
 import (
 	"database/sql"
-	"github.com/go-xorm/xorm"
+	"github.com/DATA-DOG/go-sqlmock"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/xorm"
 	"github.com/tv2169145/golang-grpc/repos"
 	"testing"
-	"github.com/DATA-DOG/go-sqlmock"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
 var (
-	err error
-	db *xorm.Engine
+	err   error
+	db    *xorm.Engine
 	dbSql *sql.DB
-	mock sqlmock.Sqlmock
+	mock  sqlmock.Sqlmock
 
 	gr repos.GlobalRepository
 

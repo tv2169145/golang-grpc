@@ -3,6 +3,7 @@ package types
 import (
 	vCop "gopkg.in/go-playground/validator.v9"
 )
+
 var (
 	validator *vCop.Validate
 )
