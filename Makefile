@@ -17,7 +17,8 @@ install:
 		github.com/gogo/protobuf/gogoproto \
 		github.com/DATA-DOG/go-sqlmock \
 		github.com/onsi/ginkgo/ginkgo \
-		github.com/onsi/gomega/...
+		github.com/onsi/gomega/... \
+		github.com/go-sql-driver/mysql
 		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock
 	go get -tags 'mysql' -u github.com/golang-migrate/migrate/cmd/migrate
 
