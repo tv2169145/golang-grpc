@@ -2,12 +2,11 @@
 
 START=${pwd}
 
-protoc: 
-	proton -I pb/v1/ \
-		—-go_out=plugins=grpc:pb \
-		—-gogrpcmock_out=:pb \
+protoc:
+	protoc -I pb/v1/ \
+		--go_out=plugins=grpc:pb \
+		--gogrpcmock_out=:pb \
 		pb/v1/*.proto
-
 install:
 	go get -u \
 		github.com/golang/protobuf/proto \
@@ -21,6 +20,7 @@ install:
 		github.com/go-sql-driver/mysql
 		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock
 	go get -tags 'mysql' -u github.com/golang-migrate/migrate/cmd/migrate
+	go get github.com/golang/mock/mockgen@latest
 
 clean:
 	rm ./pb/**/*.pb.go
