@@ -17,15 +17,15 @@ var _ = math.Inf
 
 type V1UsersMock struct{}
 
-func (m *V1UsersMock) Create(ctx context.Context, req *CreateUser) (*UserReply, error) {
+func (m *V1UsersMock) Create(ctx context.Context, req *CreateUserRequest) (*UserReply, error) {
 	res :=
 		&UserReply{
 			User: &User{
-				Id:        923,
-				FirstName: "ea",
-				LastName:  "fugit",
-				Email:     "KathleenRamos@Quamba.mil",
-				Visible:   true,
+				Id:        878,
+				FirstName: "distinctio",
+				LastName:  "non",
+				Email:     "provident_sit_impedit@Livetube.edu",
+				Visible:   false,
 			},
 		}
 	return res, nil
@@ -34,10 +34,10 @@ func (m *V1UsersMock) FindById(ctx context.Context, req *FindByIdRequest) (*User
 	res :=
 		&UserReply{
 			User: &User{
-				Id:        369,
-				FirstName: "corrupti",
-				LastName:  "eum",
-				Email:     "nGutierrez@Trudoo.biz",
+				Id:        882,
+				FirstName: "labore",
+				LastName:  "iste",
+				Email:     "qBurke@Twitterbeat.name",
 				Visible:   true,
 			},
 		}
@@ -47,11 +47,11 @@ func (m *V1UsersMock) FindByEmail(ctx context.Context, req *FindByEmailRequest) 
 	res :=
 		&UserReply{
 			User: &User{
-				Id:        5,
-				FirstName: "impedit",
-				LastName:  "excepturi",
-				Email:     "tempora_ullam@Thoughtbridge.gov",
-				Visible:   false,
+				Id:        999,
+				FirstName: "rem",
+				LastName:  "et",
+				Email:     "rerum_fugit_est@Jaxworks.org",
+				Visible:   true,
 			},
 		}
 	return res, nil
@@ -60,10 +60,10 @@ func (m *V1UsersMock) Update(ctx context.Context, req *UpdateUserRequest) (*User
 	res :=
 		&UserReply{
 			User: &User{
-				Id:        647,
-				FirstName: "quam",
-				LastName:  "eum",
-				Email:     "1Boyd@Plambee.edu",
+				Id:        652,
+				FirstName: "sint",
+				LastName:  "nihil",
+				Email:     "zGomez@Yacero.mil",
 				Visible:   true,
 			},
 		}
