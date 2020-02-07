@@ -59,7 +59,7 @@ Key: 'CreateUserRequest.confirmPassword' Error:Field validation for 'confirmPass
 			Ω(err.Error()).To(Equal(errMsg))
 		})
 
-		It("should return error because of missing email in request", func() {
+		It("should return error because global repo is missing from context", func() {
 			errMsg := "unable to get global repo from context"
 			user, err := types.NewUser(&types.TempUser{
 				FirstName: "Linn",
