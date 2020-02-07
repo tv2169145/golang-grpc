@@ -59,6 +59,31 @@ Key: 'CreateUserRequest.confirmPassword' Error:Field validation for 'confirmPass
 			Ω(err.Error()).To(Equal(errMsg))
 		})
 
+		It("should return error because of missing email in request", func() {
+			errMsg := "unable to get global repo from context"
+			user, err := types.NewUser(&types.TempUser{
+				FirstName: "Linn",
+				LastName: "jimmy",
+				Email: "jimmy@gmail.com",
+				Password: "1234",
+				ConfirmPassword: "1234",
+			})
+			Ω(err).To(BeNil())
+
+			_, err = router.Create(context.Background(), &pb.CreateUserRequest{
+				NewUser: &pb.CreateUser{
+					FirstName: user.FirstName,
+					LastName: user.LastName,
+					Email: user.Email,
+					Password: "1234",
+					ConfirmPassword: "1234",
+				},
+			})
+			//spew.Dump(err)
+			Ω(err).NotTo(BeNil())
+			Ω(err.Error()).To(Equal(errMsg))
+		})
+
 		It("should fail a database test", func() {
 			errMsg := "database is unavailable"
 
