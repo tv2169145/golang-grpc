@@ -40,7 +40,7 @@ func init() {
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
 		r := sl.Current().Interface().(FindByIdRequest)
 
-		if r.GetId() <= 0 {
+		if r.GetId() == 0 {
 			sl.ReportError("ID", "id", "ID", "valid-id", "")
 		}
 

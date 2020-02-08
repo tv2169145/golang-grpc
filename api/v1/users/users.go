@@ -107,9 +107,7 @@ func(h *grpcHandler) Update(ctx context.Context, req *pb.UpdateUserRequest) (res
 	}
 
 	if len(req.GetNewPassword()) > 0 {
-		if err = user.SetPassword(req.GetNewPassword()); err != nil {
-			return
-		}
+		user.SetPassword(req.GetNewPassword())
 	}
 
 	if err = userRepo.Update(user); err != nil {
