@@ -9,6 +9,7 @@ var (
 // GlobalRepository - the GlobalRepository interface
 type GlobalRepository interface {
 	Users() UsersRepo
+	Auth() AuthRepo
 }
 
 // GlobalRepository - global Repository func
@@ -39,5 +40,9 @@ func (r *globalRepository) repoFactory(key string, factory func() interface{}) i
 
 func (r *globalRepository) Users() UsersRepo {
 	return r.repoFactory("users", func() interface{} {return NewUsersRepo(r.db)}).(UsersRepo)
+}
+
+func (r *globalRepository) Auth() AuthRepo {
+	return r.repoFactory("auth", func() interface{} {return NewAuthRepo(r.db)}).(AuthRepo)
 }
 

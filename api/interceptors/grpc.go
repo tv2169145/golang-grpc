@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func globalRepoInjector(db *xorm.Engine) grpc.UnaryServerInterceptor {
+func GlobalRepoInjector(db *xorm.Engine) grpc.UnaryServerInterceptor {
 	// 前面的 grpc.UnaryServerInterceptor() 作為型別轉換, 將後面定義的function 轉為 grpc.UnaryServerInterceptor類型
 	return grpc.UnaryServerInterceptor(func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
 		globalRepo := repos.GlobalRepo(db)
