@@ -72,6 +72,18 @@ func init() {
 		//	sl.ReportError("Password", "password", "Password", "valid-password", "")
 		//}
 	}, UpdateUserRequest{})
+
+	// Auth
+	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
+		r := sl.Current().Interface().(LoginRequest)
+
+		if len(r.GetEmail()) == 0 {
+			sl.ReportError("Email", "email", "Email", "valid-email", "")
+		}
+		if len(r.GetPassword()) == 0 {
+			sl.ReportError("Password", "password", "Password", "valid-password", "")
+		}
+	}, LoginRequest{} )
 }
 
 func Validate(t interface{}) error {

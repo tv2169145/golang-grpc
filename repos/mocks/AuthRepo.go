@@ -5,10 +5,10 @@
 package mock_repos
 
 import (
-gomock "github.com/golang/mock/gomock"
-types "github.com/tv2169145/golang-grpc/types"
-jwt "github.com/pascaldekloe/jwt"
-reflect "reflect"
+	gomock "github.com/golang/mock/gomock"
+	jwt "github.com/pascaldekloe/jwt"
+	types "github.com/tv2169145/golang-grpc/types"
+	reflect "reflect"
 )
 
 // MockAuthRepo is a mock of AuthRepo interface
