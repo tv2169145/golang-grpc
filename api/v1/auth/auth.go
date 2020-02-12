@@ -10,7 +10,7 @@ type grpcHandler struct {
 
 }
 
-func InitRoutes() *grpcHandler {
+func GetRoutes() pb.V1AuthServer {
 	return &grpcHandler{}
 }
 

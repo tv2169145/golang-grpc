@@ -31,7 +31,7 @@ var _ = Describe("", func() {
 		globalRepo = repoMocks.NewMockGlobalRepository(mockCtrl)
 		usersRepo = repoMocks.NewMockUsersRepo(mockCtrl)
 		authRepo = repoMocks.NewMockAuthRepo(mockCtrl)
-		router = InitRoutes()
+		router = GetRoutes()
 		ctx = utils.SetGlobalRepoOnContext(context.Background(), globalRepo)
 
 		globalRepo.EXPECT().Auth().Return(authRepo).AnyTimes()
@@ -149,7 +149,5 @@ var _ = Describe("", func() {
 			Ω(token).NotTo(BeNil())
 			Ω(token.GetToken()).To(Equal(mockToken))
 		})
-
-
 	})
 })
